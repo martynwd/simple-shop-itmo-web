@@ -1,0 +1,119 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas: 'header'
+                         'main'
+                         'footer';
+    
+}
+nav{
+    grid-area: nav;
+    width: 100%;
+    & > .nav_item{
+        font-size: 18px;
+        color:white;
+    }
+};
+.header{
+    
+    grid-area: header;
+    display: flex;
+    width: 100%;
+    height: 100px;
+
+    &__logo{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width: 300px;
+        grid-area: logo;
+    }
+    &__image{
+        width: 80px;
+    }
+}
+
+.header.clone{
+    position:fixed;
+    top:-200px;
+    left: 0;
+    right: 0;
+    z-index:999;
+    transition:0.4s top cubic-bezier(.3,.73,.3,.74);
+    background: #bf2c6a;
+    border-radius: 10px;
+}
+body.down .header.clone {
+    top:0;
+}
+.after{
+    width: 100%;
+}
+.main{
+    grid-area: main;
+    &__picture{
+        margin: 60px 0 60px 0;
+    }
+
+    &__text{
+        color: white;
+        text-align: center;
+        font-size: 72px;
+        font-family: 'Ranchers', cursive;
+    }
+    &__promo{
+        &_text{
+            color: white;
+            font-size: 30px;
+            border: 3px solid;
+            padding: 30px;
+            border-color: blue;
+            border-radius: 60px;;
+            font-family: 'Caveat', cursive;
+        }
+        &_img{
+            width: 700px;
+        }
+    }
+
+    &__product{
+        display: flex;
+        flex-direction: column;
+        
+        &_info{
+            margin: 20px 0 20px 0;
+            width: 500px;
+            height: 250px;
+            background-color: white;
+            border-radius: 30px;
+            padding: 30px;
+        }
+    }
+
+}
+.card{
+    padding: 2rem;
+    background: yellow;
+}
+.footer{
+    grid-area: footer;
+    height: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
